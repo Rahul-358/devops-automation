@@ -20,7 +20,8 @@ pipeline {
         stage('App deploy on Docker comtainer'){
             steps{
                 script{
-                   sh 'docker run -itd --name itheroes java-itheroes /bin/bash'
+                   sh 'docker rm itheroes'
+                   sh 'docker run -itd --name itheroes -p 80:8080 java-itheroes /bin/bash'
                 }
 
             }
