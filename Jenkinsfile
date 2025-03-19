@@ -1,7 +1,7 @@
 pipeline {
     agent any   // machine --> localmachine ---> cloud EC2
     tools{
-        maven 'Maven3'  # java build tools // Maven, Gradle and ent
+        maven 'Maven3'  // java build tools // Maven, Gradle and ent
     }
     stages{
         stage('git code checkout'){
