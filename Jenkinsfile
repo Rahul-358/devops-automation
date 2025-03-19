@@ -1,7 +1,7 @@
 pipeline {
-    agent any   # machine --> localmachine ---> cloud EC2
+    agent any   // machine --> localmachine ---> cloud EC2
     tools{
-        maven 'Maven3'  # java build tools --> Maven, Gradle and ent
+        maven 'Maven3'  # java build tools // Maven, Gradle and ent
     }
     stages{
         stage('git code checkout'){
@@ -19,7 +19,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t java-itheroes .'  # docker images
+                    sh 'docker build -t java-itheroes .'  // docker images
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
                 script{
                    sh 'docker stop itheroes'
                    sh 'docker rm itheroes'
-                   sh 'docker run -itd --name itheroes -p 80:8080 java-itheroes /bin/bash' # docker ps ---> running container
+                   sh 'docker run -itd --name itheroes -p 80:8080 java-itheroes /bin/bash' // docker ps ---> running container
                 }
 
             }
